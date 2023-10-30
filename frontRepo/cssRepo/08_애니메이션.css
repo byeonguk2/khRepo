@@ -1,0 +1,74 @@
+.box {
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+#t01:active {
+    transform: translateX(100px);
+    background-color: gray;
+    transition: 0.5s;
+    /* 처음에는 빨랐다가 나중에는 느려짐 */
+    /* 이유는 transition-timing-function 때문  */
+    /* 0.5초 걸쳐서 해당 요소가 움직인다 */
+
+    transition-timing-function: cubic-bezier(0,1.01,.93,.37) ;
+    /* 움직이는 속도 평균이 달라짐 */
+    /* cubic-bezier 이용해 속도값을 지정 할 수 있다. */
+}
+
+@keyframes kh {
+    0% {
+        background-color: red;
+        transform: perspective(100px) rotate3d(1,1,1, 30deg);
+    }
+
+    25% {
+        background-color: beige;
+        transform: perspective(100px) rotate3d(1,1,1, 0deg);
+    }
+
+    50% {
+        background-color: blue;
+        transform: perspective(100px) rotate3d(1,1,1, 90deg);
+    }
+
+    75% {
+        background-color: brown;
+        transform: perspective(100px) rotate3d(1,1,1, 0deg);
+    }
+
+    100% {
+        background-color: black;
+    }
+   
+    /* 애니메이션은 100%까지 꼭 써줘야함 */
+}
+/* 2초 짜리 애니메이션 50%는 빨강 , 나머지는 파랑 */
+
+#t02:hover {
+    animation: kh; 
+    animation-duration: 4s; /* 시간 설정 */
+    animation-timing-function: linear; /* 일정하게 linear */
+    animation-delay: 3s; /* 애니메이션 대기시간 */
+    animation-iteration-count: 2; /* 반복순서 / 무한반복은 infinite */
+    /* animation-direction: alternate; 처음 -> 뒤 -> 뒤 -> 처음으로 순서변경 */
+    animation-direction: normal; /*뒤 -> 앞 -> 뒤 -> 앞 순서변경*/
+    animation-fill-mode: both; /* backwards 애니메이션 시작값을 가짐 
+                       both 두개같이 사용  forwards 마지막 상태로 유지 */
+    /* animation-play-state: paused; paused 애니메이션 정지 */
+
+    /*
+    none        : 기본
+    forwards    : 애니메이션 끝나고, 마지막 상태(100%) 유지
+    backwards   : 애니메이션 처음에, 처음 상태(0%) 가짐 //delay 주고 테스트 필요
+    both        : forwards , backwards 두 특성을 모두 가짐
+    */
+
+}
+/* kh = name , animation-duration = 4초 */
+
+#t02:active{
+    /* animation-play-state: running; 마우스 올리면 애니메이션 실행 */
+}
+

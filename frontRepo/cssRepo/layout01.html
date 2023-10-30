@@ -1,0 +1,167 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>주문하기</h1>   
+    </div>
+    
+    <div>
+        <label>고객명: <input type="text"></label>
+    </div>
+    <br>
+    <div>
+        <label>전화번호: <input type="text"></label>
+    </div>
+    <br>
+    <div>
+        <label>E=mail: <input type="text"></label>
+    </div>
+
+    <div>
+        <fieldset>
+        <legend>피자사이즈</legend>
+        <input type="radio">small
+        <br>
+        <input type="radio">medium
+        <br>
+        <input type="radio">Large
+    </fieldset>
+    </div>
+
+    <div>
+        <fieldset>
+        <legend>피자사이즈</legend>
+        <input type="checkbox">베이컨
+        <br><br>
+        <input type="checkbox">치즈
+        <br><br>
+        <input type="checkbox">양파
+        <br><br>
+        <input type="checkbox">버섯
+    </fieldset>
+    </div>
+    <br>
+    <div>
+        희망 배송 시간: <input type="time">
+    </div>
+    <br>
+    <div>
+        배송 시 요청사항: <textarea name="히히" id="히히" cols="30" rows="5"></textarea>
+    </div>
+    <br>
+    <div>
+        <button type="submit">주문하기</button>
+    </div>
+    
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+
+    <style>
+        button[type=submit]{
+            width: 100%
+        }
+        input[type=time]{
+            width: 100%;
+        }
+        table {
+            width: 400px;
+        }
+        table > tbody > tr:first-child > td:first-child{
+            width: 30%;
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>주문하기</h1>
+
+    <form>
+        <table>
+            <tr>
+                <td>고객명</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td><input type="tel"></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input type="email"></td>
+            </tr>
+        </table>
+        
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="size" id="small" value="small">
+            <label for="small">Small</label>
+
+            <br><br>
+
+            <input type="radio" name="size" id="medium" value="medium">
+            <label for="medium">Medium</label>
+
+            <br><br>
+
+            <input type="radio" name="size" id="large" value="large">
+            <label for="large">Large</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="topping" id="bacon" value="bacon">
+            <label for="bacon">베이컨</label>
+            
+            <br><br>
+            
+            <input type="checkbox" name="topping" id="cheese" value="cheese">
+            <label for="cheese">치즈</label>
+            
+            <br><br>
+            
+            <input type="checkbox" name="topping" id="onion" value="onion">
+            <label for="onion">양파</label>
+            
+            <br><br>
+            
+            <input type="checkbox" name="topping" id="mushroom" value="mushroom">
+            <label for="mushroom">버섯</label>
+        </fieldset>
+
+        <br>
+
+        <table>
+            <tr>
+                <td class="first">희망 배송 시간</td>
+                <td class="second" style="width: 70%; background-color: green;"><input type="time"></td>
+            </tr>
+            <tr>
+                <td class="first">배송 시 요청사항</td>
+                <td class="second" style="width: 70%; background-color: green;"><textarea rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">주문하기</button></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.box {
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+#t01:hover {
+    transform: translate(50px,50px);
+    /* 위치 이용가능 */
+
+    transform:  scaleX(2);
+    transform:  scaleY(0.5);
+    transform:  scale(0.7 , 3);
+    /* 늘리기 가능 (X,Y) */
+
+    transform: rotate(-30deg);
+    /* 돌리기 가능 (반대는 -로)*/
+
+    transform: skewX(30deg);
+    transform: skewY(30deg);
+    transform: skew(30deg , 45deg);
+    /* 비틀기 가능 (X,Y) */
+
+    transform: translate(50px) rotate(30deg) scale(2) skewY(30deg);
+    /* 전체 같이 사용 가능 */
+
+    transform: perspective(100px) rotate3d(1,1,1,30deg);
+    /* 얼마나 떨어트려 볼건지 + 3D로 보기 */
+    transform: perspective(100px) rotateY(30deg);
+    /* X,Y,Z 를 각각 돌려보면서 연습하면 좋을거 같다 */
+
+    transform: rotateY(60deg);
+    backface-visibility: hidden;
+    /* backface-visibility 해당요소에 뒷면이 안보임 */
+
+}
